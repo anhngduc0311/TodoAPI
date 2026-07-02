@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Todo.Infrastructure;
 using Todo.Infrastructure.Persistence.Entities;
 
 namespace Todo.API
@@ -13,6 +14,8 @@ namespace Todo.API
 
             services.AddDbContext<TodoAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            services.AddAutoMapper(typeof(InfraAssemblyMarker).Assembly);
 
             return services;
         }

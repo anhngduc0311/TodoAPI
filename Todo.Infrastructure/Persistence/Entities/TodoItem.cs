@@ -1,6 +1,6 @@
 ﻿namespace Todo.Infrastructure.Persistence.Entities
 {
-    internal class TodoItem: BaseAuditableEntity
+    public class TodoItem: BaseAuditableEntity
     {
         public Guid TodoListId { get; set; }
         public TodoList TodoList { get; set; }
